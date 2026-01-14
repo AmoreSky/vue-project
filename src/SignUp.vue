@@ -22,21 +22,26 @@
 <script setup>
   import { ref } from 'vue';
 
-  // const user = ref({});
+  const users = []
 
   const name = ref('');
   const email = ref('');
   const password = ref('');
+  // const user = ref('')
 
   const register = () =>{
-    console.log(name.value, email.value, password.value);
-    const name = ref('name.value')
-    const email = ref('email.value
-    const password = password.value
+    // console.log(name.value, email.value, password.value);
+    // user = '{name, email, password}'
+    const user = {
+      name: name.value,
+      email: email.value,
+      password: password.value
+    }
+    // console.log(user);
 
-
-    const user = {name, email, password}
-    console.log(user);
+    users.push(user)
+    console.log(users);
+    localStorage.setItem('users', JSON.stringify(users))
 
   }
 
